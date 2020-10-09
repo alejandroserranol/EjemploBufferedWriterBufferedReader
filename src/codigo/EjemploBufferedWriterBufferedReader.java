@@ -11,9 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -56,10 +54,10 @@ public class EjemploBufferedWriterBufferedReader {
         try {
             BufferedReader br = new BufferedReader(new FileReader(nombre));
             
-            int valor = br.read();
-            while (valor != -1) {                
-                System.out.print((char)valor);
-                valor = br.read();
+            String valor = br.readLine();
+            while (valor != null) {                
+                System.out.println(valor);
+                valor = br.readLine();
             }
             
             br.close();
